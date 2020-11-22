@@ -5,6 +5,34 @@ import Application from './Application.js';
 export default class Applications extends Endpoint {
     /**
      *
+     * @param {string} app this is the domain, for which the test must be done
+     * @return {Promise<Application>}
+     */
+    async create(app) {
+        const responseData = await this.client.request('apps', Client.METHOD.POST, {body: `app=${app}`});
+        if (responseData === undefined) {
+            throw new Exception(`Loader.io app ${app} can not be created.`);
+        }
+
+        return new Application(this.client, responseData);
+    }
+
+    /**
+     *
+     * @param {string} id
+     * @return {Promise<Application>}
+     */
+    async get(id) {
+        const data = await this.client.request(`apps/${id}`, Client.METHOD.GET);
+        if (data === undefined) {
+            throw new Exception(`Loader.io app ${id} can not be found.`);
+        }
+
+        return new Application(this.client, data);
+    }
+
+    /**
+     *
      * @return {Promise<Application[]>}
      */
     async list() {
@@ -14,33 +42,5 @@ export default class Applications extends Endpoint {
         }
 
         return data.map((entry) => new Application(this.client, entry));
-    }
-
-    /**
-     *
-     * @param {string} app this is the domain, for which the test must be done
-     * @return {Promise<Application>}
-     */
-    async create( app) {
-        const data = await this.client.request('apps', Client.METHOD.POST, {body: `app=${app}`});
-        if (data === undefined) {
-            throw new Exception(`Loader.io app ${app} can not be created.`);
-        }
-
-        return new Application(this.client, data);
-    }
-
-    /**
-     *
-     * @param {string} id
-     * @return {Promise<Application>}
-     */
-    async get( id) {
-        const data = await this.client.request(`apps/${id}`, Client.METHOD.GET);
-        if (data === undefined) {
-            throw new Exception(`Loader.io app ${app} can not be found.`);
-        }
-
-        return new Application(this.client, data);
     }
 }

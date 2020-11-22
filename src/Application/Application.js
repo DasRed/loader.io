@@ -9,15 +9,16 @@ export default class Application extends Endpoint {
     /**
      *
      * @param {Client} client
-     * @param {Object} data
+     * @param {string} app
+     * @param {string} app_id
+     * @param {string} status
      */
-    constructor(client, data) {
+    constructor(client, {app, app_id, status}) {
         super(client);
 
-        this.app             = data.app;
-        this.app_id          = data.app_id;
-        this.status          = data.status;
-        this.verification_id = data.verification_id;
+        this.app_id = app_id;
+        this.app    = app;
+        this.status = status;
     }
 
     /**
@@ -26,7 +27,7 @@ export default class Application extends Endpoint {
      */
     async delete() {
         try {
-            await this.client.request(`apps/${this.id}`, Client.METHOD.DELETE);
+            await this.client.request(`apps/${this.app_id}`, Client.METHOD.DELETE);
         }
         catch {
             return false;
@@ -44,7 +45,7 @@ export default class Application extends Endpoint {
             return true;
         }
 
-        const data = await this.client.request(`apps/${this.id}`, Client.METHOD.POST, {body: `method=http`});
+        const data = await this.client.request(`apps/${this.app_id}`, Client.METHOD.POST, {body: `method=http`});
 
         if (data.message === 'success') {
             this.status = Application.STATUS.VERIFIED;
