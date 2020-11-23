@@ -1,6 +1,7 @@
-# loader.io
+# loader.io [![Build Status](https://travis-ci.com/DasRed/loader.io.svg?branch=master)](https://travis-ci.com/DasRed/loader.io) [![Coverage Status](https://coveralls.io/repos/github/DasRed/loader.io/badge.svg)](https://coveralls.io/github/DasRed/loader.io)
 
 loader.io api wrapper for nodejs.
+
 
 # Installation
 ```$ npm install loaderio```

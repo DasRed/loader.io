@@ -9,8 +9,9 @@
         "publish:check": "semantic-release --branch master --no-ci --dry-run",
         "prepublishOnly": "npm run build && npm run semantic-release -- --no-ci",
         "semantic-release": "semantic-release",
-        "test": "jest --coverage",
-        "test:coverage": "jest --ci --coverage --runInBand --reporters=default --reporters=jest-junit"
+        "test": "jest",
+        "test:coverage": "jest --ci --coverage --runInBand --reporters=default --reporters=jest-junit",,,
+        "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
     },
     "repository": {
         "type": "git",
@@ -38,6 +39,7 @@
         "babel-jest": "^26.6.3",
         "commitizen": "^4.2.2",
         "core-js": "^3.7.0",
+        "coveralls": "^3.1.0",
         "cz-conventional-changelog": "^3.3.0",
         "husky": "^4.3.0",
         "jest": "^26.6.3",
@@ -117,9 +119,6 @@
         ],
         "transform": {
             "^.+\\.js$": "babel-jest"
-        },
-        "moduleNameMapper": {
-            "(.*.min.js)": "<rootDir>/src/__mocks__/$1"
         },
         "moduleFileExtensions": [
             "js"
