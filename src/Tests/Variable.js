@@ -10,4 +10,16 @@ export default class Variable {
         this.property = property;
         this.source   = source;
     }
+
+    /**
+     *
+     * @return {{name: string, property: string, source: string}}
+     */
+    toJSON() {
+        return {
+            name:     this.name,
+            property: this.property,
+            source:   this.source,
+        };
+    }
 }
