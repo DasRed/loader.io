@@ -10,7 +10,7 @@
         "prepublishOnly": "npm run build && npm run semantic-release -- --no-ci",
         "semantic-release": "semantic-release",
         "test": "jest",
-        "test:coverage": "jest --ci --coverage --runInBand --reporters=default --reporters=jest-junit",,,
+        "test:coverage": "jest --ci --coverage --runInBand --reporters=default --reporters=jest-junit",
         "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
     },
     "repository": {
