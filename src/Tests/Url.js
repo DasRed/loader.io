@@ -24,7 +24,7 @@ export default class Url {
      */
     constructor({
                     url,
-                    truncated_url= null,
+                    truncated_url = null,
                     raw_post_body = null,
                     request_type = Url.TYPE.GET,
                     payload_file_url = null,
@@ -41,7 +41,7 @@ export default class Url {
         this.headers          = headers;
         this.request_params   = request_params;
         this.variables        = variables == null ? variables : variables.map((variable) => variable instanceof Variable ? variable : new Variable(variable));
-        this.authentication   = authentication != null && authentication instanceof Object && (authentication instanceof Authentication) === false ? new Authentication(authentication): authentication;
+        this.authentication   = authentication != null && authentication instanceof Object && (authentication instanceof Authentication) === false ? new Authentication(authentication) : authentication;
     }
 
     /**
@@ -57,7 +57,7 @@ export default class Url {
             payload_file_url: this.payload_file_url || undefined,
             headers:          this.headers || undefined,
             request_params:   this.request_params || undefined,
-            variables:        this.variables instanceof Array ? this.variables.map((variable) => variable.toJSON()): undefined,
+            variables:        this.variables instanceof Array ? this.variables.map((variable) => variable.toJSON()) : undefined,
             authentication:   this.authentication instanceof Authentication ? this.authentication.toJSON() : undefined,
         };
     }
