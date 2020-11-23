@@ -9,9 +9,8 @@
         "publish:check": "semantic-release --branch master --no-ci --dry-run",
         "prepublishOnly": "npm run build && npm run semantic-release -- --no-ci",
         "semantic-release": "semantic-release",
-        "test": "jest",
-        "test:coverage": "jest --ci --coverage --runInBand --reporters=default --reporters=jest-junit",
-        "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+        "test": "jest --coverage",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
     },
     "repository": {
         "type": "git",
