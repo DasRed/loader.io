@@ -1,4 +1,5 @@
 import Endpoint from './Endpoint.js';
+import Client from './Client.js';
 
 export default class Servers extends Endpoint {
     /**

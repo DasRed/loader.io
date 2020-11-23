@@ -1,12 +1,14 @@
 import Endpoint from '../Endpoint.js';
 import Test from '../Tests/Test.js';
 import Exception from '../Exception.js';
+import Client from '../Client.js';
+import Url from './Url.js';
 
 /**
  * @typedef {Object} LoaderIOTestCreateData
  * @property {string} name
  * @property {string} [test_type = Test.TYPE.CYCLING]
- * @property {string[]} urls
+ * @property {URL[]} urls
  * @property {number} duration
  * @property {number} [initial = 1] will be ignored for non-cycling tests
  * @property {number} [total = 25]
@@ -31,15 +33,16 @@ export default class Tests extends Endpoint {
                 total:           25,
                 timeout:         10000,
                 error_threshold: 50,
-                ...data
+                ...data,
+                urls:            data.urls.map((url) => url instanceof Url ? url.toJSON() : url)
             }
         });
 
-        if (responseData === undefined) {
+        if (responseData?.message !== 'success') {
             throw new Exception(`Loader.io test ${data.name} can not be created.`);
         }
 
-        return this.get(responseData.id);
+        return this.get(responseData.test_id);
     }
 
     /**

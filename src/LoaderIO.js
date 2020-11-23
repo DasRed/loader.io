@@ -1,6 +1,5 @@
 import Applications from './Application/Applications.js';
 import Tests from './Tests/Tests.js';
-import Results from './Tests/Results.js';
 import Servers from './Servers.js';
 import Client from './Client.js';
 
@@ -16,7 +15,6 @@ export default class LoaderIO {
 
         this.applications = new Applications(client);
         this.tests        = new Tests(client);
-        this.results      = new Results(client);
         this.servers      = new Servers(client);
     }
 }

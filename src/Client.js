@@ -1,4 +1,4 @@
-import {fetch} from 'whatwg-fetch';
+import fetch from 'node-fetch';
 import qs from 'qs';
 import Exception from './Exception.js';
 
@@ -7,7 +7,7 @@ export default class Client {
         GET:    'GET',
         POST:   'POST',
         PATCH:  'PATCH',
-        PUT:  'PUT',
+        PUT:    'PUT',
         DELETE: 'DELETE',
     };
 
@@ -27,21 +27,27 @@ export default class Client {
      *
      * @return {Promise<*>}
      */
-    async request(path, method, {parameters, body} = {}) {
-        const query = qs.stringify(parameters, {
+    async request(path, method, {parameters = undefined, body = undefined} = {}) {
+        const query   = qs.stringify(parameters, {
             encodeValuesOnly: true,
             arrayFormat:      'brackets',
             addQueryPrefix:   true
         });
-        const url   = `${this.server}/${this.version}/${path}${query}`;
+        const url     = `${this.server}/${this.version}/${path}${query}`;
+        const options = {
+            method,
+            parameters,
+            body:    body != null && body instanceof Object ? JSON.stringify(body) : body,
+            headers: {'loaderio-auth': this.token},
+        };
+
+        if (body != null && body instanceof Object) {
+            options.headers['Content-Type'] = 'application/json';
+        }
 
         try {
             /** @type {Response} */
-            const response = await fetch(url, {
-                method,
-                body,
-                headers: {'loaderio-auth': this.token},
-            });
+            const response = await fetch(url, options);
 
             switch (response.status) {
                 case 200:
@@ -51,8 +57,10 @@ export default class Client {
                     return undefined;
 
                 default:
+                    const data         = await response.body.body;
+                    const errorMessage = await response.json();
                     //noinspection ExceptionCaughtLocallyJS
-                    throw new Exception(`Loader.io request ${url} failed with response code ${response.status} (https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#1xx_informational_response).`, response);
+                    throw new Exception(`${errorMessage.errors.join('. ')} - Loader.io request ${url} failed with response code ${response.status} (https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#1xx_informational_response).`, response);
             }
         }
         catch (error) {

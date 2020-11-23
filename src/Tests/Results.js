@@ -1,6 +1,7 @@
 import Endpoint from '../Endpoint.js';
 import Exception from '../Exception.js';
 import Result from './Result.js';
+import Client from '../Client.js';
 
 export default class Results extends Endpoint {
     /**
