@@ -13,8 +13,7 @@ describe('Applications', () => {
                 status: Application.STATUS.VERIFIED
             });
 
-            const applications = new Applications(client);
-            const application  = await applications.create('nuff');
+            const application = await (new Applications(client)).create('nuff');
 
             expect(application).toBeInstanceOf(Application);
             expect(application.client).toBe(client);
@@ -28,9 +27,9 @@ describe('Applications', () => {
             const client = new Client('xxx');
             jest.spyOn(client, 'request').mockResolvedValue(undefined);
 
-            const applications = new Applications(client);
             try {
-                await applications.create('nuff');
+                await (new Applications(client)).create('nuff');
+                fail('This should not be reachable');
             }
             catch (error) {
                 expect(error).toBeInstanceOf(Exception);
@@ -48,8 +47,7 @@ describe('Applications', () => {
                 status: Application.STATUS.VERIFIED
             });
 
-            const applications = new Applications(client);
-            const application  = await applications.get('nuff');
+            const application = await (new Applications(client)).get('nuff');
 
             expect(application).toBeInstanceOf(Application);
             expect(application.client).toBe(client);
@@ -63,9 +61,9 @@ describe('Applications', () => {
             const client = new Client('xxx');
             jest.spyOn(client, 'request').mockResolvedValue(undefined);
 
-            const applications = new Applications(client);
             try {
-                await applications.get('narf');
+                await (new Applications(client)).get('narf');
+                fail('This should not be reachable');
             }
             catch (error) {
                 expect(error).toBeInstanceOf(Exception);
@@ -83,8 +81,7 @@ describe('Applications', () => {
                 status: Application.STATUS.VERIFIED
             }]);
 
-            const applications = new Applications(client);
-            const result       = await applications.list('nuff');
+            const result = await (new Applications(client)).list('nuff');
 
             expect(result).toBeInstanceOf(Array);
             expect(result).toHaveLength(1);
@@ -100,8 +97,7 @@ describe('Applications', () => {
             const client     = new Client('xxx');
             const requestSpy = jest.spyOn(client, 'request').mockResolvedValue(undefined);
 
-            const applications = new Applications(client);
-            const result       = await applications.list('nuff');
+            const result = await (new Applications(client)).list('nuff');
 
             expect(result).toBeInstanceOf(Array);
             expect(result).toHaveLength(0);

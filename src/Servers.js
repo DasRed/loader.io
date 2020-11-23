@@ -8,9 +8,6 @@ export default class Servers extends Endpoint {
      */
     async list() {
         const data = await this.client.request('servers', Client.METHOD.GET);
-        if (data === undefined) {
-            return [];
-        }
 
         return data?.ip_addresses || [];
     }

@@ -57,7 +57,6 @@ export default class Client {
                     return undefined;
 
                 default:
-                    const data         = await response.body.body;
                     const errorMessage = await response.json();
                     //noinspection ExceptionCaughtLocallyJS
                     throw new Exception(`${errorMessage.errors.join('. ')} - Loader.io request ${url} failed with response code ${response.status} (https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#1xx_informational_response).`, response);

@@ -13,19 +13,18 @@ export default class Url {
     /**
      *
      * @param {string} url
-     * @param {string} [request_type]
      * @param {string} [truncated_url]
-     * @param {Object|null} [authentication]
-     * @param {Authentication|Object} authentication.type
-     * @param {Object.<string, string>} [headers = {}]
-     * @param {Object.<string, string>} [request_params = {}]
      * @param {string|null} [raw_post_body = null]
+     * @param {string} [request_type]
      * @param {string|null} [payload_file_url = null]
-     * @param {Variable[]} [variables = []]
+     * @param {Object.<string, string>} [headers = null]
+     * @param {Object.<string, string>} [request_params = null]
+     * @param {Variable[]} [variables = null]
+     * @param {Object|Authentication|null} [authentication]
      */
     constructor({
                     url,
-                    truncated_url,
+                    truncated_url= null,
                     raw_post_body = null,
                     request_type = Url.TYPE.GET,
                     payload_file_url = null,
@@ -42,7 +41,7 @@ export default class Url {
         this.headers          = headers;
         this.request_params   = request_params;
         this.variables        = variables == null ? variables : variables.map((variable) => variable instanceof Variable ? variable : new Variable(variable));
-        this.authentication   = authentication == null ? authentication : new Authentication(authentication);
+        this.authentication   = authentication != null && authentication instanceof Object && (authentication instanceof Authentication) === false ? new Authentication(authentication): authentication;
     }
 
     /**
@@ -58,7 +57,7 @@ export default class Url {
             payload_file_url: this.payload_file_url || undefined,
             headers:          this.headers || undefined,
             request_params:   this.request_params || undefined,
-            variables:        this.variables instanceof Variable ? this.variables.map((variable) => variable.toJSON()): undefined,
+            variables:        this.variables instanceof Array ? this.variables.map((variable) => variable.toJSON()): undefined,
             authentication:   this.authentication instanceof Authentication ? this.authentication.toJSON() : undefined,
         };
     }
