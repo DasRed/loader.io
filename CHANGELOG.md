@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/DasRed/loader.io/compare/v1.1.4...v1.2.0) (2020-11-24)
+
+
+### Features
+
+* changing signature of LoaderIO constructor ([7291b02](https://github.com/DasRed/loader.io/commit/7291b027a437024d8fd9f125526548cb3346fba5))
+
 ## [1.1.4](https://github.com/DasRed/loader.io/compare/v1.1.3...v1.1.4) (2020-11-24)
 
 
