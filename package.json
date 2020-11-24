@@ -1,5 +1,5 @@
 {
-    "name": "loaderio",
+    "name": "loader.io.api",
     "version": "1.1.0",
     "main": "dist/index.js",
     "type": "module",
@@ -147,5 +147,23 @@
                 }
             ]
         ]
-    }
+    },
+    "keywords": [
+        "loader.io",
+        "loaderio",
+        "loader-io",
+        "loader IO",
+        "node.loader.io",
+        "node-loaderio",
+        "node-loader-io",
+        "node loader IO",
+        "loader.io.api",
+        "loaderioAPI",
+        "loader-io-API",
+        "loader IO API",
+        "node.loader.io.API",
+        "node-loaderioAPI",
+        "node-loader-io-API",
+        "node loader IO API"
+    ]
 }
