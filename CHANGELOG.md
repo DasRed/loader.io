@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/DasRed/loader.io/compare/v1.0.0...v1.1.0) (2020-11-24)
+
+
+### Features
+
+* create the version ([5dbe678](https://github.com/DasRed/loader.io/commit/5dbe678a4196f18606d0c2558521585ef78465e6))
+
 # 1.0.0 (2020-11-24)
 
 
