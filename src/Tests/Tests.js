@@ -8,7 +8,7 @@ import Url from './Url.js';
  * @typedef {Object} LoaderIOTestCreateData
  * @property {string} name
  * @property {string} [test_type = Test.TYPE.CYCLING]
- * @property {URL[]} urls
+ * @property {Url[]} urls
  * @property {number} duration
  * @property {number} [initial = 1] will be ignored for non-cycling tests
  * @property {number} [total = 25]
