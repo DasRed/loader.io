@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/DasRed/loader.io/compare/v1.2.0...v1.2.1) (2020-11-25)
+
+
+### Bug Fixes
+
+* adding correct status values for results ([15060b5](https://github.com/DasRed/loader.io/commit/15060b51d965a0768d0bcde2abc7e92a8027aaf0))
+
 # [1.2.0](https://github.com/DasRed/loader.io/compare/v1.1.4...v1.2.0) (2020-11-24)
 
 
