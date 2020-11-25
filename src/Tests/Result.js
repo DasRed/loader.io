@@ -1,4 +1,9 @@
 export default class Result {
+    static STATUS = {
+        READY:     'ready',
+        NOT_READY: 'not_ready',
+    };
+
     /**
      *
      * @param {string} result_id
