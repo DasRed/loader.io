@@ -4,7 +4,7 @@ import Client from '../Client.js';
 export default class Application extends Endpoint {
     static STATUS = {
         VERIFIED:   'verified',
-        UNVERIFIED: 'unverified', // TODO is this the real value?
+        UNVERIFIED: 'unverified',
     };
 
     /**
