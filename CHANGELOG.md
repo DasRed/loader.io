@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/DasRed/loader.io/compare/v1.2.1...v1.2.2) (2020-11-27)
+
+
+### Bug Fixes
+
+* fixing creation of dist so that all files will be deployed and delivered ([57c8150](https://github.com/DasRed/loader.io/commit/57c81500956d9e612b05e54166be940153859868))
+
 ## [1.2.1](https://github.com/DasRed/loader.io/compare/v1.2.0...v1.2.1) (2020-11-25)
 
 
