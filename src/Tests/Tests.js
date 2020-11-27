@@ -18,6 +18,7 @@ import Url from './Url.js';
  * @property {string} [callback_email]
  * @property {Date} [scheduled_at]
  * @property {string} [notes]
+ * @property {string[]} [tage_names]
  */
 
 export default class Tests extends Endpoint {

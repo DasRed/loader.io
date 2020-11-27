@@ -51,6 +51,7 @@ export default class Test extends Endpoint {
      * @param {string} callback_email
      * @param {string|Date} scheduled_at
      * @param {string} notes
+     * @param {string[]} tag_names
      */
     constructor(client,
                 {
@@ -58,6 +59,7 @@ export default class Test extends Endpoint {
                     duration,
                     timeout,
                     notes,
+                    tag_names,
                     initial,
                     total,
                     status,
@@ -76,6 +78,7 @@ export default class Test extends Endpoint {
         this.duration       = duration;
         this.timeout        = timeout;
         this.notes          = notes;
+        this.tag_names      = tag_names; // missing in get and list of API
         this.initial        = initial;
         this.total          = total;
         this.status         = status;

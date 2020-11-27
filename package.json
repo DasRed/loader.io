@@ -53,8 +53,7 @@
         }
     },
     "files": [
-        "dist/*",
-        "src/*"
+        "dist/*"
     ],
     "husky": {
         "hooks": {
