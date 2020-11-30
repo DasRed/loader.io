@@ -3,7 +3,7 @@
     "version": "1.3.9",
     "main": "dist/index.js",
     "files": [
-        "dist/index.js"
+        "dist/*"
     ],
     "engines": {
         "node": ">=15.0.0",
