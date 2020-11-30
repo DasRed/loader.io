@@ -2,7 +2,6 @@ import copy from 'rollup-plugin-copy'
 import clear from 'rollup-plugin-clear'
 import {builtinModules} from 'module';
 import {dependencies} from './package.json';
-import babel from '@rollup/plugin-babel';
 
 export default {
     input:    './src/index.js',
@@ -29,22 +28,5 @@ export default {
                 },
             ]
         }),
-        //babel({babelHelpers: 'bundled'}),
-        //{
-        //    renderChunk: function (source) {
-        //        const lines = source.split('\n');
-        //        for (let i = 0; i < lines.length; i++) {
-        //            const line    = lines[i];
-        //            const matches = /^(exports(?:\['default']|\.default)) = (.*);$/.exec(line);
-        //            if (matches) {
-        //                lines[i] = 'module.exports = exports = ' + matches[2] + ';\n' +
-        //                    'Object.defineProperty(exports, "__esModule", { value: true });\n' +
-        //                    matches[1] + ' = exports;';
-        //                break;
-        //            }
-        //        }
-        //        return lines.join('\n');
-        //    }
-        //}
     ]
 };
