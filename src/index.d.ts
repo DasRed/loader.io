@@ -74,9 +74,9 @@ declare module 'loaderio' {
     }
 
     class Variable {
-        constructor(info: {name: string; property: string; source: string});
+        constructor(info: { name: string; property: string; source: string });
 
-        toJSON(): {name: string; property: string; source: string};
+        toJSON(): { name: string; property: string; source: string };
     }
 
     class Endpoint {
@@ -111,9 +111,9 @@ declare module 'loaderio' {
         };
 
         static TYPE: {
-            CLIENTS_PER_TEST: 'Non-Cycling';
-            CLIENTS_PER_SECOND: 'Clients per second';
-            MAINTAIN_CLIENT_LOAD: 'Cycling';
+            CLIENTS_PER_TEST: 'per-test';
+            CLIENTS_PER_SECOND: 'per-second';
+            MAINTAIN_CLIENT_LOAD: 'maintain-load';
         };
 
         results: LoaderIO.Results;
