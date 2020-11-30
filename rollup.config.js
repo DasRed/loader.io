@@ -1,5 +1,7 @@
 import copy from 'rollup-plugin-copy'
 import clear from 'rollup-plugin-clear'
+import {builtinModules} from 'module';
+import {dependencies} from './package.json';
 
 export default [
     {
@@ -12,7 +14,7 @@ export default [
             preserveModules:     true,
             preserveModulesRoot: 'src',
         },
-        external: ['node-fetch', 'qs'],
+        external: [...builtinModules, ...Object.keys(dependencies)],
         plugins:  [
             clear({targets: ['./dist/']}),
             copy({
