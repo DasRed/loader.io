@@ -13,8 +13,7 @@
     },
     "files": [
         "dist/index.cjs",
-        "dist/index.mjs",
-        "dist/index.d.ts"
+        "dist/index.mjs"
     ],
     "engines": {
         "node": ">=15.0.0",
