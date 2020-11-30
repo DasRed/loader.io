@@ -2,8 +2,8 @@
     "name": "loader.io.api",
     "version": "1.3.2",
     "main": "dist/index.js",
+    "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
-    "type": "commonjs",
     "engines": {
         "node": ">=15.0.0",
         "npm": ">=7.0.2"

@@ -7,12 +7,10 @@ export default [
     {
         input:    './src/index.js',
         output:   {
-            dir:                 './dist/',
-            format:              'cjs',
-            exports:             'named',
-            sourcemap:           false,
-            preserveModules:     true,
-            preserveModulesRoot: 'src',
+            file:      './dist/index.js',
+            format:    'cjs',
+            exports:   'named',
+            sourcemap: false,
         },
         external: [...builtinModules, ...Object.keys(dependencies)],
         plugins:  [
@@ -26,5 +24,15 @@ export default [
                 ]
             })
         ]
+    },
+    {
+        input:    './src/index.js',
+        output:   {
+            file:      './dist/index.mjs',
+            format:    'es',
+            exports:   'named',
+            sourcemap: false,
+        },
+        external: [...builtinModules, ...Object.keys(dependencies)],
     },
 ];
