@@ -11,9 +11,9 @@ export default class Test extends Endpoint {
     };
 
     static TYPE = {
-        CLIENTS_PER_TEST:     'Non-Cycling',
-        CLIENTS_PER_SECOND:   'Clients per second',
-        MAINTAIN_CLIENT_LOAD: 'Cycling',
+        CLIENTS_PER_TEST:     'per-test',
+        CLIENTS_PER_SECOND:   'per-second',
+        MAINTAIN_CLIENT_LOAD: 'maintain-load',
     };
 
     /**
@@ -73,6 +73,25 @@ export default class Test extends Endpoint {
                 }
     ) {
         super(client);
+
+        // API delivers different type values as used for creation
+        switch (test_type) {
+            case 'Clients per second':
+            case Test.TYPE.CLIENTS_PER_SECOND:
+                test_type = Test.TYPE.CLIENTS_PER_SECOND;
+                break;
+
+            case 'Cycling':
+            case Test.TYPE.MAINTAIN_CLIENT_LOAD:
+                test_type = Test.TYPE.MAINTAIN_CLIENT_LOAD;
+                break;
+
+            case 'Non-Cycling':
+            case Test.TYPE.CLIENTS_PER_TEST:
+            default:
+                test_type = Test.TYPE.CLIENTS_PER_TEST;
+                break;
+        }
 
         this.name           = name;
         this.duration       = duration;

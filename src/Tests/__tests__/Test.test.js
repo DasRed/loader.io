@@ -35,6 +35,23 @@ describe('Test', () => {
     });
 
     describe('.constructor()', () => {
+
+        test.each([
+            [Test.TYPE.CLIENTS_PER_TEST, Test.TYPE.CLIENTS_PER_TEST],
+            ['Non-Cycling', Test.TYPE.CLIENTS_PER_TEST],
+            ['narf', Test.TYPE.CLIENTS_PER_TEST],
+            [Test.TYPE.MAINTAIN_CLIENT_LOAD, Test.TYPE.MAINTAIN_CLIENT_LOAD],
+            ['Cycling', Test.TYPE.MAINTAIN_CLIENT_LOAD],
+            [Test.TYPE.CLIENTS_PER_SECOND, Test.TYPE.CLIENTS_PER_SECOND],
+            ['Clients per second', Test.TYPE.CLIENTS_PER_SECOND],
+        ])('with different test types "%s" as "%s"', (input, output) => {
+            const url    = new Url({url: 'url2'});
+            const client = new Client('xxx');
+            const test   = new Test(client, {test_type: input});
+
+            expect(test.test_type).toBe(output);
+        });
+
         test('with date string', () => {
             const url  = new Url({url: 'url2'});
             const data = {
@@ -220,7 +237,8 @@ describe('Test', () => {
             scheduled_at:   '2020-11-24T06:30:00.000Z',
             domain:         'domain',
             urls:           [
-                {url:             'url1',
+                {
+                    url:          'url1',
                     request_type: Url.TYPE.GET
                 },
             ]
