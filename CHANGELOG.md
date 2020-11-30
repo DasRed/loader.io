@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/DasRed/loader.io/compare/v1.2.2...v1.3.0) (2020-11-30)
+
+
+### Bug Fixes
+
+* fixing test type values ([d792d71](https://github.com/DasRed/loader.io/commit/d792d71edbba2b355da0211eba5165c7cce815ec))
+
+
+### Features
+
+* adding TS types declaration file ([0808279](https://github.com/DasRed/loader.io/commit/08082795a1b374bd815dda8af8158ba21c1c5432))
+
 ## [1.2.2](https://github.com/DasRed/loader.io/compare/v1.2.1...v1.2.2) (2020-11-27)
 
 
