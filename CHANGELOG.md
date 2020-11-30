@@ -1,3 +1,10 @@
+## [1.3.10](https://github.com/DasRed/loader.io/compare/v1.3.9...v1.3.10) (2020-11-30)
+
+
+### Bug Fixes
+
+* fixing build of release ([f504ffb](https://github.com/DasRed/loader.io/commit/f504ffb97a9492712d583bbfcf855570e5f2a5dc))
+
 ## [1.3.9](https://github.com/DasRed/loader.io/compare/v1.3.8...v1.3.9) (2020-11-30)
 
 
