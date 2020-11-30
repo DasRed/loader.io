@@ -5,18 +5,11 @@ import {dependencies} from './package.json';
 
 export default {
     input:    './src/index.js',
-    output:   [
-        {
-            file:    './dist/index.cjs',
-            format:  'cjs',
-            exports: 'named',
-        },
-        {
-            file:    './dist/index.mjs',
-            format:  'es',
-            exports: 'named',
-        },
-    ],
+    output:   {
+        file:    './dist/index.js',
+        format:  'cjs',
+        exports: 'named',
+    },
     external: [...builtinModules, ...Object.keys(dependencies)],
     plugins:  [
         clear({targets: ['./dist/']}),
