@@ -1,4 +1,5 @@
-import clear from 'rollup-plugin-clear'
+import clear from 'rollup-plugin-clear';
+import es2cjs from 'rollup-es2cjs-fix';
 import {builtinModules} from 'module';
 import {dependencies} from './package.json';
 
@@ -15,16 +16,6 @@ export default {
     external: [...builtinModules, ...Object.keys(dependencies)],
     plugins:  [
         clear({targets: ['./dist/']}),
-        {
-            renderChunk: function (source) {
-                const matches = /(exports(?:\['default']|\.default)) = (.*);/gi.exec(source);
-                if (matches) {
-                    const pos = source.indexOf('exports.');
-
-                    source = source.substring(0, pos) + `module.exports = exports = ${matches[2]};\n\n` + source.substring(pos);
-                }
-                return source;
-            }
-        },
+        es2cjs(),
     ]
 };
