@@ -1,3 +1,10 @@
+## [1.3.11](https://github.com/DasRed/loader.io/compare/v1.3.10...v1.3.11) (2020-12-10)
+
+
+### Bug Fixes
+
+* adding source types for variables ([efe212e](https://github.com/DasRed/loader.io/commit/efe212ee48ec5d8d2bca95d73e93f6166d14d5b4))
+
 ## [1.3.10](https://github.com/DasRed/loader.io/compare/v1.3.9...v1.3.10) (2020-11-30)
 
 
