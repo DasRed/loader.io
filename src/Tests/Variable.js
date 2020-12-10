@@ -1,11 +1,19 @@
 export default class Variable {
+    static SOURCE = {
+        HEADER: 'header'
+    };
+
     /**
      *
      * @param {string} name
      * @param {string} property
      * @param {string} source
      */
-    constructor({name, property, source}) {
+    constructor({
+                    name,
+                    property,
+                    source
+                }) {
         this.name     = name;
         this.property = property;
         this.source   = source;
