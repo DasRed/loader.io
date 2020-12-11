@@ -7,12 +7,12 @@ export default class Variable {
      *
      * @param {string} name
      * @param {string} property
-     * @param {string} source
+     * @param {string} [source = Variable.SOURCE.HEADER]
      */
     constructor({
                     name,
                     property,
-                    source
+                    source = Variable.SOURCE.HEADER
                 }) {
         this.name     = name;
         this.property = property;

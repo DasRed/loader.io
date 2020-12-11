@@ -10,7 +10,7 @@ export default class LoaderIO {
      * @param {string} server
      * @param {string} version
      */
-    constructor({token, server = 'https://api.loader.io', version = 'v2'}) {
+    constructor(token, server = 'https://api.loader.io', version = 'v2') {
         const client      = new Client(token, server, version);
 
         this.applications = new Applications(client);

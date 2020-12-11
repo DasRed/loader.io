@@ -7,7 +7,7 @@ import Client from '../Client.js';
 describe('LoaderIO', () => {
     describe('.constructor()', () => {
         test('with values', () => {
-            const loaderIO = new LoaderIO({token: 'nuff', server: 'https://exampe.narf', version: 'v7'});
+            const loaderIO = new LoaderIO('nuff', 'https://exampe.narf', 'v7');
 
             expect(loaderIO.applications).toBeInstanceOf(Applications);
             expect(loaderIO.tests).toBeInstanceOf(Tests);
@@ -26,7 +26,7 @@ describe('LoaderIO', () => {
         });
 
         test('with defaults', () => {
-            const loaderIO = new LoaderIO({token: 'nuff'});
+            const loaderIO = new LoaderIO('nuff');
 
             expect(loaderIO.applications).toBeInstanceOf(Applications);
             expect(loaderIO.tests).toBeInstanceOf(Tests);

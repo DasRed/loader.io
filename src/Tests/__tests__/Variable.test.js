@@ -13,6 +13,17 @@ describe('Variable', () => {
         expect(variable.source).toBe('somewhere');
     });
 
+    test('.constructor() defaults', () => {
+        const variable = new Variable({
+            name:     'nuff',
+            property: 'narf',
+        });
+
+        expect(variable.name).toBe('nuff');
+        expect(variable.property).toBe('narf');
+        expect(variable.source).toBe(Variable.SOURCE.HEADER);
+    });
+
     test('.toJSON()', () => {
         const variable = new Variable({
             name:     'nuff',

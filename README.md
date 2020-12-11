@@ -13,7 +13,7 @@ If you interested in this npm package, take a look at the npm package [perst](ht
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const applications = await loaderIO.applications.list();
 
     console.log(applications);
@@ -28,7 +28,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const application = await loaderIO.applications.create('xxx.xxx.de');
 
     console.log(application);
@@ -43,7 +43,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const application = await loaderIO.applications.get('fd929d9f1211a7721233c297e804406b');
 
     console.log(application);
@@ -58,7 +58,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const application = await loaderIO.applications.get('fd929d9f1211a7721233c297e804406b');
     const result = await application.delete();
 
@@ -73,7 +73,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const application = await loaderIO.applications.get('fd929d9f1211a7721233c297e804406b');
     const result = await application.verify();
 
@@ -89,7 +89,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const tests = await loaderIO.tests.list();
 
     console.log(tests);
@@ -105,7 +105,7 @@ import LoaderIO from './src/index.js';
 import Test from './src/Tests/Test.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const test = await loaderIO.tests.create({
         name:           'NPM Loader IO Test',
         type:           Test.TYPE.CLIENTS_PER_TEST,
@@ -128,7 +128,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const test = await loaderIO.tests.get('9723cfd4ec75e536c3da09c52278a9eb');
 
     console.log(test);
@@ -144,7 +144,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const test = await loaderIO.tests.get('9723cfd4ec75e536c3da09c52278a9eb');
     const result = await test.run();
 
@@ -160,7 +160,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const test = await loaderIO.tests.get('9723cfd4ec75e536c3da09c52278a9eb');
     const result = await test.stop();
 
@@ -176,7 +176,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const test = await loaderIO.tests.get('9723cfd4ec75e536c3da09c52278a9eb');
     const results = await loaderIO.tests.results.list();
 
@@ -192,7 +192,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const test = await loaderIO.tests.get('9723cfd4ec75e536c3da09c52278a9eb');
     const result = await loaderIO.tests.results.get('e2844894902937962f506c23ef60860c');
 
@@ -208,7 +208,7 @@ catch (error) {
 import LoaderIO from './src/index.js';
 
 try {
-    const loaderIO = new LoaderIO({token: 'bb7cabe565ec0059b4fecbfa846b31ee'});
+    const loaderIO = new LoaderIO('bb7cabe565ec0059b4fecbfa846b31ee');
     const servers = await loaderIO.servers.list();
 
     console.log(servers);
