@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/DasRed/loader.io/compare/v1.3.11...v2.0.0) (2020-12-11)
+
+
+### Code Refactoring
+
+* changing functions signatures for better use ([54ee838](https://github.com/DasRed/loader.io/commit/54ee838bcad99b6fcd7ec0f5ff42f8d56abd1a09))
+
+
+### BREAKING CHANGES
+
+* changing functions signatures
+
 ## [1.3.11](https://github.com/DasRed/loader.io/compare/v1.3.10...v1.3.11) (2020-12-10)
 
 
