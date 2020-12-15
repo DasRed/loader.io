@@ -1,14 +1,34 @@
 # loader.io [![Build Status](https://travis-ci.com/DasRed/loader.io.svg?branch=master)](https://travis-ci.com/DasRed/loader.io) [![Coverage Status](https://coveralls.io/repos/github/DasRed/loader.io/badge.svg)](https://coveralls.io/github/DasRed/loader.io)
 
 loader.io api wrapper for nodejs.
-If you interested in this npm package, take a look at the npm package [perst](https://www.npmjs.com/package/perst).
+If you interested in this npm package, take a look at the npm package [perst](https://dasred.github.io/perst).
 
-# Installation
-```$ npm install loaderio```
+## Table of Contents
 
-# API
+* [Installation](#installation)
+* [API](#api)
+	* [get all applications](#get-all-applications)
+	* [create an application](#create-an-application)
+	* [get an application](#get-an-application)
+	* [delete an application](#delete-an-application)
+	* [verify an application](#verify-an-application)
+	* [get all tests](#get-all-tests)
+	* [create a test](#create-a-test)
+	* [get a test](#get-a-test)
+	* [start a test run](#start-a-test-run)
+	* [stop a test run](#stop-a-test-run)
+	* [get all results of a test ](#get-all-results-of-a-test-)
+	* [get one result of a test ](#get-one-result-of-a-test-)
+	* [get all servers](#get-all-servers)
 
-## get all applications
+## Installation
+
+`$ npm install loaderio`
+
+## API
+
+### get all applications
+
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -23,7 +43,8 @@ catch (error) {
 }
 ```
 
-## create an application
+### create an application
+
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -38,7 +59,8 @@ catch (error) {
 }
 ```
 
-## get an application
+### get an application
+
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -53,7 +75,8 @@ catch (error) {
 }
 ```
 
-## delete an application
+### delete an application
+
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -68,7 +91,9 @@ catch (error) {
     console.error(error.message);
 }
 ```
-## verify an application
+
+### verify an application
+
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -84,7 +109,8 @@ catch (error) {
 }
 ```
 
-## get all tests
+### get all tests
+
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -99,7 +125,8 @@ catch (error) {
 }
 ```
 
-## create a test
+### create a test
+
 ```javascript
 import LoaderIO from './src/index.js';
 import Test from './src/Tests/Test.js';
@@ -123,7 +150,8 @@ catch (error) {
 }
 ```
 
-## get a test
+### get a test
+
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -138,8 +166,8 @@ catch (error) {
 }
 ```
 
+### start a test run
 
-## start a test run
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -155,7 +183,8 @@ catch (error) {
 }
 ```
 
-## stop a test run
+### stop a test run
+
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -171,7 +200,8 @@ catch (error) {
 }
 ```
 
-## get all results of a test 
+### get all results of a test 
+
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -187,7 +217,8 @@ catch (error) {
 }
 ```
 
-## get one result of a test 
+### get one result of a test 
+
 ```javascript
 import LoaderIO from './src/index.js';
 
@@ -203,7 +234,8 @@ catch (error) {
 }
 ```
 
-## get all servers
+### get all servers
+
 ```javascript
 import LoaderIO from './src/index.js';
 
