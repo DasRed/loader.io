@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/DasRed/loader.io/compare/v2.0.0...v2.0.1) (2021-08-20)
+
+
+### Bug Fixes
+
+* type module ([e2a935d](https://github.com/DasRed/loader.io/commit/e2a935de5004435a3ff0ce0669994cb8a740b1f6))
+
 # [2.0.0](https://github.com/DasRed/loader.io/compare/v1.3.11...v2.0.0) (2020-12-11)
 
 
