@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/DasRed/loader.io/compare/v2.0.1...v2.0.2) (2021-08-20)
+
+
+### Bug Fixes
+
+* src to package ([3b5e8a1](https://github.com/DasRed/loader.io/commit/3b5e8a10c7ded8d9262fe8813251af3376f4d3bb))
+
 ## [2.0.1](https://github.com/DasRed/loader.io/compare/v2.0.0...v2.0.1) (2021-08-20)
 
 
