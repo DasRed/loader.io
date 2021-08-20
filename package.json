@@ -48,7 +48,6 @@
         "core-js": "^3.7.0",
         "coveralls": "^3.1.0",
         "cz-conventional-changelog": "^3.3.0",
-        "husky": "^7.0.1",
         "jest": "^27.0.6",
         "rollup": "^2.33.3",
         "rollup-es2cjs-fix": "^1.0.0",
@@ -58,42 +57,6 @@
     "config": {
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
-        }
-    },
-    "husky": {
-        "hooks": {
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-        }
-    },
-    "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
-        ],
-        "rules": {
-            "header-max-length": [
-                2,
-                "always",
-                200
-            ],
-            "scope-case": [
-                1,
-                "always",
-                [
-                    "upper-case",
-                    "lower-case",
-                    "pascal-case",
-                    "start-case"
-                ]
-            ],
-            "subject-case": [
-                1,
-                "always",
-                [
-                    "sentence-case",
-                    "lower-case",
-                    "start-case"
-                ]
-            ]
         }
     },
     "release": {
