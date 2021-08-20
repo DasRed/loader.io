@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/DasRed/loader.io/compare/v2.0.2...v2.0.3) (2021-08-20)
+
+
+### Bug Fixes
+
+* build with rollup-es2cjs-fix ([956f273](https://github.com/DasRed/loader.io/commit/956f273829b5119d7edadd36f277a865f0de0d36))
+
 ## [2.0.2](https://github.com/DasRed/loader.io/compare/v2.0.1...v2.0.2) (2021-08-20)
 
 
